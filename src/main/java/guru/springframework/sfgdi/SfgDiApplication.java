@@ -16,7 +16,10 @@ public class SfgDiApplication {
 		ApplicationContext ctx = SpringApplication.run(SfgDiApplication.class, args);
 		
 		FakeDataSource fakeDataSource = (FakeDataSource) ctx.getBean(FakeDataSource.class);
-		System.out.println(String.format("**** FakeDataSource. User: %s, password: %s, url: %s", 
+		System.out.println("**** FakeDataSource *****");
+		// Attenzione i valori del bean sono sovrascritti dalle variabile di ambiente
+		// lo username di maniera automatica e il password di maniera esplicita tramite il PropertyConfig
+		System.out.println(String.format("User: [%s]. password: [%s], url: [%s]", 
 				fakeDataSource.getUser(), fakeDataSource.getPassword(), fakeDataSource.getUrl()));
 
 		PetController petController = ctx.getBean("petController", PetController.class);
