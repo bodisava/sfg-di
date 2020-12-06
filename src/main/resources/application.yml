@@ -4,3 +4,12 @@ guru:
     username: JMS username
     password: JMS some pass
     dburl: jms.url.test
+
+#file separator
+---
+spring:  profiles: EN
+guru:
+  jms:
+    username: EN JMS username
+    password: EN JMS some pass
+    dburl: EN.jms.url.test
